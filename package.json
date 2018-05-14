@@ -22,7 +22,9 @@
     "express-state": "^1.4.0",
     "react": "^16.3.1",
     "react-dom": "^16.3.1",
-	"feedparser": "*"
+	"feedparser": "*",
+	"express":"4.16.3",
+	"request":"2.85.0"
   },
   "devDependencies": {
     "babel": "^6.23.0",

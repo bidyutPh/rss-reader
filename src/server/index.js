@@ -1,4 +1,3 @@
-const http = require('http');
 const FeedParser = require('feedparser');
 const express = require('express');
 const app = express();
