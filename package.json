@@ -12,6 +12,10 @@
   },
   "author": "Bidyut Phukan",
   "license": "ISC",
+  "engines": {
+    "node": "6.11.x",
+    "npm": "3.10.x"
+  },
   "dependencies": {
     "body-parser": "^1.18.2",
     "bootstrap": "^4.1.0",
