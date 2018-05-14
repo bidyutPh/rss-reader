@@ -44,7 +44,7 @@ const categories = ['All','Entertainment','Sports','Science','Business'];
 
 app.use(express.static(__dirname + './../../'));
 
-app.listen(8080, function(){
+app.listen(process.env.PORT || 8080, function(){
 	console.log('Started server on port 8080');
 });
 
