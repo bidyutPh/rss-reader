@@ -1,0 +1,98 @@
+body {
+  background: #000000;
+  color: #FFFFFF;
+  text-align: center;
+}
+#app-container {
+
+  min-height:100%;
+  min-width:100%;
+
+  #sidebar {
+    background: #354B78;
+    padding-left: 0px;
+    padding-right: 0px;
+
+    #feed-source {
+      font-size: 14pt;
+      padding-bottom: 10px;
+      padding-top: 10px;
+      min-height: 40px;
+      padding-left: 0px;
+      padding-right: 0px;
+    }
+
+    a {
+      cursor: pointer;
+    }
+
+    .source-container:hover {
+      background-color: #354BC0;
+    }
+
+    .selectedFacet {
+      background-color: #fff;
+      color: #000;
+    }
+  }
+
+
+  #feeds-container {
+    background: #FFFFFF;
+
+    .row-container {
+      //border: 1px solid #c2c2c2
+      padding-top: 10px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #c2c2c2;
+
+      &:hover {
+        box-shadow: 0px 0px 27px -2px #354B78;
+        cursor: pointer;
+        border-radius: 0px;
+      }
+    }
+
+    .feed-image {
+      height: 100px;
+      width: 180px;
+    }
+
+    .title-content {
+      text-align: left;
+    }
+
+    .summary-content {
+      font-size: 10pt;
+      color: black;
+      text-align: left;
+    }
+
+    .mask {
+      margin-left: -15px;
+      /* display: none; */
+      /* float: left; */
+      padding-left: -15px;
+      padding-top: 50;
+      width: 100%;
+      background-color: #c2c2c2;
+      position: absolute;
+      z-index: 99999;
+      opacity: 0.6;
+      height: 100%;
+    }
+
+    .categoryContainer {
+      margin-top: 5px;
+
+      button {
+        height:35px;
+        border-radius: 0px;
+        margin-right: 5px
+      }
+    }
+
+
+
+  }
+}
