@@ -92,7 +92,8 @@ class Content extends Component {
     this.getFeeds(categoryObj.url);
   }
 
-  redirectUserToArticle(feed) {
+  redirectUserToArticle(evt,feed) {
+    evt.stopPropagation();
     window.open(feed.link, '_blank');
   }
 
@@ -103,21 +104,21 @@ class Content extends Component {
 
 	render(){
 		return (
-      <div id="feeds-container" className="col-lg-10 container">
+      <div id="feeds-container" className="col-lg-10">
       {this.state.showMask ? <div className="mask">
           <div className="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
         </div> : null}
         {/*{this.state.feeds.map((feed,index)=><li>Hello Bidyut {feed} </li>)};*/}
-        <div className="container categoryContainer">
+        <div className="categoryContainer">
           {this.state.categories.map((category) =>
             <button type="button" key={category.label} onClick={() => this.getCategoryFilteredFeeds(category)} className={"btn " + category.class}>{category.label}</button>
           )}
         </div>
         {this.state.feeds.map((feed, index)=>(<div key={index} className="container row-container" onClick={() => {this.redirectUserToArticle(feed)}}>
             {this.getImageLink(feed) ? <div className="row"><div className="col-lg-3"><img className="feed-image"
-             src={this.getImageLink(feed)}></img></div><div className="col-lg-9 row"><div className="title-content col-lg-12"><a href={feed.link}>{feed.title}</a></div>
+             src={this.getImageLink(feed)}></img></div><div className="col-lg-9 row"><div className="title-content col-lg-12"><a onClick={(evt) => {this.redirectUserToArticle(evt,feed)}}>{feed.title}</a></div>
              <div className="summary-content col-lg-12">{this.getDescription(feed.summary)}</div></div></div> : <div className="row">
-             <div className="col-lg-12 row"><div className="title-content col-lg-12"><a href={feed.link}>{feed.title}</a></div>
+             <div className="col-lg-12 row"><div className="title-content col-lg-12"><a onClick={(evt) => {this.redirectUserToArticle(evt,feed)}}>{feed.title}</a></div>
              <div className="summary-content col-lg-12">{this.getDescription(feed.summary)}</div></div>
              </div>}
         </div>))}

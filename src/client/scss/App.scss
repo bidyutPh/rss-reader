@@ -2,6 +2,21 @@ body {
   background: #000000;
   color: #FFFFFF;
   text-align: center;
+
+  #title-header {
+    text-align: left;
+    padding-left: 20px;
+
+    span {
+      font-size: 30px;
+    }
+
+    h6 {
+      adding-left: 10px;
+      display: inline;
+      font-weight: normal;
+    }
+  }
 }
 #app-container {
 
@@ -47,9 +62,13 @@ body {
       border-bottom: 1px solid #c2c2c2;
 
       &:hover {
-        box-shadow: 0px 0px 27px -2px #354B78;
+        box-shadow: 0px 3px 4px -3px #354B78;;
         cursor: pointer;
         border-radius: 0px;
+      }
+
+      a {
+        color: #007bff;
       }
     }
 
