@@ -93,7 +93,9 @@ class Content extends Component {
   }
 
   redirectUserToArticle(evt,feed) {
-    evt.stopPropagation();
+    if (evt.stopPropagation) {
+      evt.stopPropagation();
+    }
     window.open(feed.link, '_blank');
   }
 
@@ -114,7 +116,7 @@ class Content extends Component {
             <button type="button" key={category.label} onClick={() => this.getCategoryFilteredFeeds(category)} className={"btn " + category.class}>{category.label}</button>
           )}
         </div>
-        {this.state.feeds.map((feed, index)=>(<div key={index} className="container row-container" onClick={() => {this.redirectUserToArticle(feed)}}>
+        {this.state.feeds.map((feed, index)=>(<div key={index} className="container row-container" onClick={(evt) => {this.redirectUserToArticle(evt, feed)}}>
             {this.getImageLink(feed) ? <div className="row"><div className="col-lg-3"><img className="feed-image"
              src={this.getImageLink(feed)}></img></div><div className="col-lg-9 row"><div className="title-content col-lg-12"><a onClick={(evt) => {this.redirectUserToArticle(evt,feed)}}>{feed.title}</a></div>
              <div className="summary-content col-lg-12">{this.getDescription(feed.summary)}</div></div></div> : <div className="row">
