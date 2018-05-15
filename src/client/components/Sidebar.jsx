@@ -41,8 +41,7 @@ class SideBar extends Component {
 
 	render(){
 		return (
-      <div id="sidebar" className="col-lg-2 container">
-        <div >
+      <div id="sidebar" className="col-lg-2">
           <div id="feed-source"><strong>Feed Source</strong></div>
           <div>
             {this.state.sources.map((source, index) => (
@@ -51,7 +50,6 @@ class SideBar extends Component {
             </div>
             ))}
           </div>
-        </div>
       </div>
      )
 	}
